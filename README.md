@@ -78,14 +78,4 @@ Validasi JavaScript/jQuery sebelum submit:
 - Backend (PHP + MySQL, 12 tabel pada proposal) akan dikerjakan pada tahap berikutnya; struktur data di `data.js` sengaja meniru tabel `barang`, `pesanan`, `hold_stok`, dan `blokir_ketersediaan`.
 - Halaman 2.b (katalog & simulasi ketersediaan) dan 2.c (form pengajuan sewa) dipilih agar berbeda dari halaman anggota kelompok lain sesuai ketentuan 2.d. Fitur lain dari proposal yang dapat dipakai anggota lain: verifikasi toko, blokir ketersediaan, konfirmasi pembayaran, serah terima/pengembalian.
 
-## Cara mengunggah ke GitHub
-
-Folder harus bernama `PW_<kode_kelompok>_<nim>` dan berada di repository akun GitHub masing-masing:
-
-```bash
-git add PWUTS_B05_25091397063
-git commit -m "UTS Pemrograman Web Lanjut"
-git push
-```
-
-Hasil dapat diakses di `https://github.com/<id-github>/PWUTS_B05_25091397063`. 
+Repositori dapat diakses di `https://github.com/pashaherianto/PWUTS_B05_25091397063`. 
