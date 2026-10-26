@@ -1,0 +1,105 @@
+<!-- Halaman 2.c — Form pengajuan sewa (tabel pesanan), dimuat lewat Ajax -->
+<div class="mb-3">
+  <h1 class="h3 fw-bold mb-1">Form Pengajuan Sewa</h1>
+  <p class="text-muted mb-0">Isi data pemesan dan detail sewa. Semua isian divalidasi di browser sebelum dikirim ke server.</p>
+</div>
+
+<div id="bannerHold" class="alert alert-warning d-none" role="status"></div>
+
+<div id="hasilKirim" class="d-none"></div>
+
+<div class="row g-4" id="areaForm">
+  <div class="col-lg-7">
+    <form id="formSewa" class="card form-card" action="proses/simpan_pesanan.php" method="post" novalidate>
+      <div class="card-body p-4">
+
+        <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Data pemesan</h2>
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama lengkap <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="nama" name="nama" autocomplete="name" placeholder="mis. Siti Rahma">
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="email" placeholder="nama@email.com">
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-md-6">
+            <label for="no_hp" class="form-label">No. HP <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" id="no_hp" name="no_hp" autocomplete="tel" placeholder="08xxxxxxxxxx">
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Detail sewa</h2>
+        <div class="mb-3">
+          <label for="id_barang" class="form-label">Barang <span class="text-danger">*</span></label>
+          <select class="form-select" id="id_barang" name="id_barang">
+            <option value="">— Pilih barang —</option>
+          </select>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label for="tgl_mulai" class="form-label">Tanggal mulai <span class="text-danger">*</span></label>
+            <input type="date" class="form-control" id="tgl_mulai" name="tgl_mulai">
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-md-4">
+            <label for="tgl_selesai" class="form-label">Tanggal selesai <span class="text-danger">*</span></label>
+            <input type="date" class="form-control" id="tgl_selesai" name="tgl_selesai">
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-md-4">
+            <label for="jumlah" class="form-label">Jumlah unit <span class="text-danger">*</span></label>
+            <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" value="1">
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+        <div id="infoStok" class="small mb-3"></div>
+
+        <div class="mb-3">
+          <label for="catatan" class="form-label">Catatan untuk penyedia <span class="text-muted small">(opsional)</span></label>
+          <textarea class="form-control" id="catatan" name="catatan" rows="3" maxlength="200" placeholder="mis. diambil pukul 09.00"></textarea>
+          <div class="d-flex justify-content-between">
+            <div class="invalid-feedback d-block"></div>
+            <div class="form-text ms-auto"><span id="hitungCatatan">0</span>/200</div>
+          </div>
+        </div>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="setuju" name="setuju">
+          <label class="form-check-label" for="setuju">
+            Saya memahami bahwa pembayaran dilakukan di luar website dan dikonfirmasi oleh penyedia, serta barang harus dikembalikan sesuai tanggal selesai.
+          </label>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <button type="submit" class="btn btn-success btn-lg px-4">Kirim Pengajuan</button>
+          <button type="reset" class="btn btn-outline-secondary btn-lg" id="btnReset">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Ringkasan pesanan (hitung otomatis) -->
+  <div class="col-lg-5">
+    <div class="summary-card summary-sticky p-4">
+      <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Ringkasan pesanan</h2>
+      <dl class="row small mb-3">
+        <dt class="col-5">Barang</dt><dd class="col-7" id="rBarang">—</dd>
+        <dt class="col-5">Toko</dt><dd class="col-7" id="rToko">—</dd>
+        <dt class="col-5">Harga / hari</dt><dd class="col-7" id="rHarga">—</dd>
+        <dt class="col-5">Periode</dt><dd class="col-7" id="rPeriode">—</dd>
+        <dt class="col-5">Durasi</dt><dd class="col-7" id="rDurasi">—</dd>
+        <dt class="col-5">Jumlah</dt><dd class="col-7" id="rJumlah">—</dd>
+      </dl>
+      <hr>
+      <div class="text-muted small">Total harga sewa</div>
+      <div class="total-price" id="rTotal">Rp0</div>
+      <div class="small text-muted mt-1">Total = harga × jumlah × durasi hari.</div>
+    </div>
+  </div>
+</div>

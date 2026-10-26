@@ -1,0 +1,79 @@
+<!-- Halaman 2.b — dimuat lewat Ajax ke #konten pada index.html -->
+<div class="d-flex flex-wrap justify-content-between align-items-end mb-3 gap-2">
+  <div>
+    <h1 class="h3 fw-bold mb-1">Katalog &amp; Cek Ketersediaan</h1>
+    <p class="text-muted mb-0">Pilih tanggal dan jumlah — sistem menghitung unit kosong otomatis, lalu Anda bisa menahan unit selama 15 menit.</p>
+  </div>
+</div>
+
+<div id="pesanKatalog" class="alert alert-success d-none" role="status"></div>
+
+<!-- Filter & periode -->
+<div class="card filter-card mb-4">
+  <div class="card-body">
+    <form id="formFilter" class="row g-3" novalidate>
+      <div class="col-md-6 col-lg-3">
+        <label for="fCari" class="form-label">Cari barang</label>
+        <input type="search" class="form-control" id="fCari" placeholder="mis. tenda, kamera">
+      </div>
+      <div class="col-md-6 col-lg-2">
+        <label for="fKategori" class="form-label">Kategori</label>
+        <select class="form-select" id="fKategori"><option value="">Semua</option></select>
+      </div>
+      <div class="col-6 col-lg-2">
+        <label for="fMulai" class="form-label">Tanggal mulai</label>
+        <input type="date" class="form-control" id="fMulai">
+      </div>
+      <div class="col-6 col-lg-2">
+        <label for="fSelesai" class="form-label">Tanggal selesai</label>
+        <input type="date" class="form-control" id="fSelesai">
+      </div>
+      <div class="col-6 col-lg-1">
+        <label for="fJumlah" class="form-label">Jumlah</label>
+        <input type="number" class="form-control" id="fJumlah" min="1" value="1">
+      </div>
+      <div class="col-6 col-lg-2">
+        <label for="fUrut" class="form-label">Urutkan</label>
+        <select class="form-select" id="fUrut">
+          <option value="nama">Nama A–Z</option>
+          <option value="harga-asc">Harga termurah</option>
+          <option value="harga-desc">Harga termahal</option>
+          <option value="tersedia">Unit kosong terbanyak</option>
+        </select>
+      </div>
+    </form>
+    <div id="infoPeriode" class="small mt-3 text-muted"></div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <!-- Daftar barang -->
+  <div class="col-lg-9">
+    <div id="peringatanTanggal" class="alert alert-warning d-none"></div>
+    <div id="daftarBarang" class="row g-3"></div>
+  </div>
+
+  <!-- Panel hold -->
+  <div class="col-lg-3">
+    <div class="card filter-card summary-sticky">
+      <div class="card-body">
+        <h2 class="h6 fw-bold">⏱️ Unit yang Anda tahan</h2>
+        <p class="small text-muted">Penahanan berlaku 15 menit, lalu unit dilepas otomatis.</p>
+        <div id="panelHold"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal detail + peta ketersediaan 14 hari -->
+<div class="modal fade" id="modalDetail" tabindex="-1" aria-labelledby="detailJudul" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title h5" id="detailJudul">Detail barang</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body" id="detailIsi"></div>
+    </div>
+  </div>
+</div>

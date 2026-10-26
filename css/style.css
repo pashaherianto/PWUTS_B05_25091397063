@@ -1,0 +1,142 @@
+:root {
+  --c-primary: #0f766e;
+  --c-primary-dark: #115e59;
+  --c-accent: #f59e0b;
+  --c-bg: #f4f7f6;
+  --c-ok: #16a34a;
+  --c-warn: #d97706;
+  --c-bad: #dc2626;
+}
+
+body { background: var(--c-bg); color: #1f2937; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; }
+#konten { min-height: 70vh; outline: none; }
+
+/* Navbar */
+.app-nav { background: linear-gradient(90deg, var(--c-primary-dark), var(--c-primary)); }
+.brand-accent { color: var(--c-accent); }
+.app-nav .nav-link { border-radius: .5rem; padding: .5rem .9rem; }
+.app-nav .nav-link.active { background: rgba(255,255,255,.18); font-weight: 600; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--c-primary-dark) 0%, var(--c-primary) 60%, #14b8a6 100%); color: #fff; overflow: hidden; }
+.hero-art { position: relative; height: 240px; max-width: 320px; margin: 0 auto; }
+.hero-emoji { position: absolute; font-size: 4rem; background: rgba(255,255,255,.15); border-radius: 1.5rem; width: 110px; height: 110px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); animation: floaty 4s ease-in-out infinite; }
+.hero-emoji.e1 { top: 0; left: 10px; }
+.hero-emoji.e2 { top: 20px; right: 10px; animation-delay: .6s; }
+.hero-emoji.e3 { bottom: 0; left: 40px; animation-delay: 1.2s; }
+.hero-emoji.e4 { bottom: 10px; right: 30px; animation-delay: 1.8s; }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* Home blocks */
+.stat-box { background: #fff; border-radius: 1rem; padding: 1.25rem .5rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.stat-num { font-size: 2rem; font-weight: 700; color: var(--c-primary); }
+.step-card { background: #fff; border-radius: 1rem; padding: 1.1rem; height: 100%; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.step-no { display: inline-flex; width: 2rem; height: 2rem; border-radius: 50%; background: var(--c-accent); color: #fff; font-weight: 700; align-items: center; justify-content: center; margin-bottom: .5rem; }
+
+/* Katalog */
+.filter-card { border: 0; box-shadow: 0 1px 6px rgba(0,0,0,.08); border-radius: 1rem; }
+.item-card { border: 0; border-radius: 1rem; box-shadow: 0 1px 6px rgba(0,0,0,.08); overflow: hidden; transition: transform .15s, box-shadow .15s; }
+.item-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+.item-thumb { height: 120px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+.cat-outdoor { background: linear-gradient(135deg, #bbf7d0, #4ade80); }
+.cat-fotografi { background: linear-gradient(135deg, #bfdbfe, #60a5fa); }
+.cat-elektronik { background: linear-gradient(135deg, #fde68a, #fbbf24); }
+.cat-olahraga { background: linear-gradient(135deg, #fecaca, #f87171); }
+.cat-acara { background: linear-gradient(135deg, #ddd6fe, #a78bfa); }
+.stok-bar { height: 8px; border-radius: 4px; background: #e5e7eb; overflow: hidden; }
+.stok-bar > div { height: 100%; transition: width .3s; }
+.hold-item { background: #fffbeb; border: 1px solid #fde68a; border-radius: .75rem; padding: .75rem; }
+.countdown { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--c-warn); }
+
+/* Peta ketersediaan 14 hari */
+.avail-chart { display: grid; grid-template-columns: repeat(14, 1fr); gap: 4px; align-items: end; height: 120px; }
+.avail-col { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; font-size: .65rem; }
+.avail-col .bar { width: 100%; border-radius: 4px 4px 0 0; min-height: 4px; }
+.avail-col .lbl { margin-top: 4px; color: #6b7280; }
+
+/* Form */
+.form-card { border: 0; border-radius: 1rem; box-shadow: 0 1px 6px rgba(0,0,0,.08); }
+.summary-card { border: 0; border-radius: 1rem; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.08); }
+@media (min-width: 992px) { .summary-sticky { position: sticky; top: 90px; } }
+.total-price { font-size: 1.6rem; font-weight: 700; color: var(--c-primary); }
+
+/* Footer & loading */
+.app-footer { background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
+.loading-box { padding: 4rem 0; text-align: center; color: #6b7280; }
+
+@media (max-width: 575.98px) {
+  .hero-emoji { width: 84px; height: 84px; font-size: 2.8rem; }
+  .hero-art { height: 200px; }
+  .avail-col .lbl { font-size: .55rem; }
+}
+:root {
+  --c-primary: #0f766e;
+  --c-primary-dark: #115e59;
+  --c-accent: #f59e0b;
+  --c-bg: #f4f7f6;
+  --c-ok: #16a34a;
+  --c-warn: #d97706;
+  --c-bad: #dc2626;
+}
+
+body { background: var(--c-bg); color: #1f2937; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; }
+#konten { min-height: 70vh; outline: none; }
+
+/* Navbar */
+.app-nav { background: linear-gradient(90deg, var(--c-primary-dark), var(--c-primary)); }
+.brand-accent { color: var(--c-accent); }
+.app-nav .nav-link { border-radius: .5rem; padding: .5rem .9rem; }
+.app-nav .nav-link.active { background: rgba(255,255,255,.18); font-weight: 600; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--c-primary-dark) 0%, var(--c-primary) 60%, #14b8a6 100%); color: #fff; overflow: hidden; }
+.hero-art { position: relative; height: 240px; max-width: 320px; margin: 0 auto; }
+.hero-emoji { position: absolute; font-size: 4rem; background: rgba(255,255,255,.15); border-radius: 1.5rem; width: 110px; height: 110px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); animation: floaty 4s ease-in-out infinite; }
+.hero-emoji.e1 { top: 0; left: 10px; }
+.hero-emoji.e2 { top: 20px; right: 10px; animation-delay: .6s; }
+.hero-emoji.e3 { bottom: 0; left: 40px; animation-delay: 1.2s; }
+.hero-emoji.e4 { bottom: 10px; right: 30px; animation-delay: 1.8s; }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* Home blocks */
+.stat-box { background: #fff; border-radius: 1rem; padding: 1.25rem .5rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.stat-num { font-size: 2rem; font-weight: 700; color: var(--c-primary); }
+.step-card { background: #fff; border-radius: 1rem; padding: 1.1rem; height: 100%; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.step-no { display: inline-flex; width: 2rem; height: 2rem; border-radius: 50%; background: var(--c-accent); color: #fff; font-weight: 700; align-items: center; justify-content: center; margin-bottom: .5rem; }
+
+/* Katalog */
+.filter-card { border: 0; box-shadow: 0 1px 6px rgba(0,0,0,.08); border-radius: 1rem; }
+.item-card { border: 0; border-radius: 1rem; box-shadow: 0 1px 6px rgba(0,0,0,.08); overflow: hidden; transition: transform .15s, box-shadow .15s; }
+.item-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+.item-thumb { height: 120px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+.cat-outdoor { background: linear-gradient(135deg, #bbf7d0, #4ade80); }
+.cat-fotografi { background: linear-gradient(135deg, #bfdbfe, #60a5fa); }
+.cat-elektronik { background: linear-gradient(135deg, #fde68a, #fbbf24); }
+.cat-olahraga { background: linear-gradient(135deg, #fecaca, #f87171); }
+.cat-acara { background: linear-gradient(135deg, #ddd6fe, #a78bfa); }
+.stok-bar { height: 8px; border-radius: 4px; background: #e5e7eb; overflow: hidden; }
+.stok-bar > div { height: 100%; transition: width .3s; }
+.hold-item { background: #fffbeb; border: 1px solid #fde68a; border-radius: .75rem; padding: .75rem; }
+.countdown { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--c-warn); }
+
+/* Peta ketersediaan 14 hari */
+.avail-chart { display: grid; grid-template-columns: repeat(14, 1fr); gap: 4px; align-items: end; height: 120px; }
+.avail-col { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; font-size: .65rem; }
+.avail-col .bar { width: 100%; border-radius: 4px 4px 0 0; min-height: 4px; }
+.avail-col .lbl { margin-top: 4px; color: #6b7280; }
+
+/* Form */
+.form-card { border: 0; border-radius: 1rem; box-shadow: 0 1px 6px rgba(0,0,0,.08); }
+.summary-card { border: 0; border-radius: 1rem; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.08); }
+@media (min-width: 992px) { .summary-sticky { position: sticky; top: 90px; } }
+.total-price { font-size: 1.6rem; font-weight: 700; color: var(--c-primary); }
+
+/* Footer & loading */
+.app-footer { background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
+.loading-box { padding: 4rem 0; text-align: center; color: #6b7280; }
+
+@media (max-width: 575.98px) {
+  .hero-emoji { width: 84px; height: 84px; font-size: 2.8rem; }
+  .hero-art { height: 200px; }
+  .avail-col .lbl { font-size: .55rem; }
+}
